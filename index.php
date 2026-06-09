@@ -1,38 +1,67 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <tittle>
-            WEB TI ERVI - 2026
-        </tittle>
-    </head>
-    <body>
-        <h1 align="center">
-            Holla
-        </h1>
-        <table border="1" align="center" cellspacing="0" cellpadding="10 px">
-            <tr>
-                <td>
-                    <a href="index.html">Home</a>
-                </td>
-                <td>
-                    <a href="profile.html">Profile</a>
-                </td>
-                <td>
-                    <a href="contact.html">Contact</a>
-                </td>
-            </tr>
-        </table>
-        <center>
-            <img src="images/tidakfantass.jpg" width="200px" height="200px" alt="logo">
-        </center>
-        <h2>
-            Biodata
-        </h2>
-        <p>
-            Nama : Ervistia Eka F.
-        </p>
-        <p>
-            NIM : 13242520067
-        </p>
-    </body>
+  <head>
+    <title>WEB TI ERVI - 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <div class="bubble b1"></div>
+    <div class="bubble b2"></div>
+    <div class="bubble b3"></div>
+    <div class="bubble b4"></div>
+
+    <nav>
+      <a href="index.html">🏠 Home</a>
+      <a href="profile.html">🌸 Profile</a>
+      <a href="contact.html">💌 Contact</a>
+    </nav>
+
+    <div class="hero">
+      <p class="label">✨ Web TI ERVI — 2026 ✨</p>
+      <h1>Holla!</h1>
+      <p class="tagline">Selamat datang di halaman ku~ 💕</p>
+
+      <div class="avatar-wrap">
+        <span class="avatar-deco">🌸</span>
+        <span class="avatar-deco2">⭐</span>
+        <div class="avatar-ring">
+          <div class="avatar-inner">
+            <img src="images/ervi.jpg" alt="Foto Profil">
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Biodata</h2>
+
+        <div class="bio-row">
+          <div class="bio-icon">👩</div>
+          <div>
+            <p class="bio-label">Nama</p>
+            <p class="bio-value">Ervistia Eka F.</p>
+          </div>
+        </div>
+
+        <div class="bio-row">
+          <div class="bio-icon">🎓</div>
+          <div>
+            <p class="bio-label">NIM</p>
+            <p class="bio-value">13242520067</p>
+          </div>
+        </div>
+
+        <div class="dots">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+    </div>
+
+    <footer>Made with 💖 · © 2026 WEB TI ERVI</footer>
+
+  </body>
 </html>
