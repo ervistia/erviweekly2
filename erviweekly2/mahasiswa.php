@@ -122,21 +122,33 @@
                         {
                     ?>
                         <tr>
-                            <td><?= $no++; ?></td>
-                            <td><?php echo $mhs["nama"]?></td>
-                            <td><?php echo $mhs["nim"]?></td>
-                            <td><?= $mhs["prodi"]; ?></td>
-                            <td><?= $mhs["email"]; ?></td>
-                            <td><?=$mhs["no_hp"]; ?></td>
-                            <td><img src="images/ervi.png" width="45px" height="45px" alt="Foto"></td>
-                            <td>
-                                <a href="editdata.php">
-                                 <button class="btn-edit">✏️ Edit</button>   
-                                </a>
-                                <a href="hapusdata.php?id=<?= $mhs["id"]; ?>" onclick="return confirm('yakinss dek?');">
-                                 <button class="btn-hapus">🗑️ Hapus</button>
-                            </td>
-                        </tr>
+                <td><?= $no++; ?></td>
+                <td><?= $mhs["nama"]; ?></td>
+                <td><?= $mhs["nim"]; ?></td>
+                <td><?= $mhs["prodi"]; ?></td>
+                <td><?= $mhs["email"]; ?></td>
+                <td><?= $mhs["no_hp"]; ?></td>
+
+                <td>
+                    <img src="images/<?= $mhs['foto']; ?>"
+                        width="45"
+                        height="45"
+                        class="img-table"
+                        alt="<?= $mhs['nama']; ?>">
+                </td>
+
+                <td class="aksi">
+                    <a href="editdata.php?id=<?= $mhs['id']; ?>" class="btn-edit">
+                        ✏️ Edit
+                    </a>
+
+                    <a href="hapusdata.php?id=<?= $mhs['id']; ?>"
+                    onclick="return confirm('Yakin dek?')"
+                    class="btn-hapus">
+                        🗑️ Hapus
+                    </a>
+                </td>
+</tr>
                     <?php
                         }
                     ?>
