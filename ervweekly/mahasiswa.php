@@ -1,19 +1,3 @@
-<?php
-
-    require 'fungsi.php';
-
-    $query = "SELECT * FROM mahasiswa";
-
-    $mahasiswas = tampildata($query);  ///wadah isi data
-
-    ///lemari
-    /// ambil data (fetch) dari mahasiswa
-    ///mysqli_fetch_row array numerik
-    /// mysqli_fetch_assoc array associative
-    /// mysqli_fetch_array array numerik/associative
-    /// mysqli_fetch_object
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -111,36 +95,18 @@
                             <th>Email</th>
                             <th>Nomor WA</th>
                             <th>Foto</th>
-                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        
-                    <?php
-                    $no = 1;
-                        foreach($mahasiswas as $mhs)
-                        {
-                    ?>
                         <tr>
-                            <td><?= $no++; ?></td>
-                            <td><?php echo $mhs["nama"]?></td>
-                            <td><?php echo $mhs["nim"]?></td>
-                            <td><?= $mhs["prodi"]; ?></td>
-                            <td><?= $mhs["email"]; ?></td>
-                            <td><?=$mhs["no_hp"]; ?></td>
+                            <td>1</td>
+                            <td><strong>Ervistia</strong></td>
+                            <td>13242520067</td>
+                            <td>Teknologi Informasi</td>
+                            <td>eervistia@gmail.com</td>
+                            <td>082137336815</td>
                             <td><img src="images/ervi.png" width="45px" height="45px" alt="Foto"></td>
-                            <td>
-                                <a href="editdata.php">
-                                 <button class="btn-edit">✏️ Edit</button>   
-                                </a>
-                                <a href="hapusdata.php?id=<?= $mhs["id"]; ?>" onclick="return confirm('yakinss dek?');">
-                                 <button class="btn-hapus">🗑️ Hapus</button>
-                            </td>
                         </tr>
-                    <?php
-                        }
-                    ?>
-                    
                     </tbody>
                 </table>
             </div>

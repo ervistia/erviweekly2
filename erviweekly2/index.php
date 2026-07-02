@@ -23,7 +23,7 @@
     <div class="hero">
       <p class="label">✨ Web TI ERVI — 2026 ✨</p>
       <h1>Holla!</h1>
-      <p class="tagline">Selamat datang di halaman ku~ 💕</p>
+      <p class="tagline">Selamat datang di halaman ku !</p>
 
       <div class="avatar-wrap">
         <span class="avatar-deco">🌸</span>
