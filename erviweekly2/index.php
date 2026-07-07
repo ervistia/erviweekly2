@@ -30,7 +30,7 @@
         <span class="avatar-deco2">⭐</span>
         <div class="avatar-ring">
           <div class="avatar-inner">
-            <img src="images/ervi.png" alt="Foto Profil">
+            <img src="images/erv.png" alt="Foto Profil">
           </div>
         </div>
       </div>
@@ -62,7 +62,7 @@
       </div>
     </div>
 
-    <footer>Made with 💖 · © 2026 WEB TI ERVI</footer>
+    <footer>Made with · © 2026 WEB TI ERVI</footer>
 
   </body>
 </html>

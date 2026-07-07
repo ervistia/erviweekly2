@@ -55,6 +55,47 @@ function tambahdata($data)
     return mysqli_affected_rows($conn);
 }
 
+function editdata($data)
+{
+    global $conn;
+
+    $id = $data["id"];
+    $nama   = htmlspecialchars($data["nama"]);
+    $nim    = htmlspecialchars($data["nim"]);
+    $prodi  = htmlspecialchars($data["Prodi"]);
+    $email  = htmlspecialchars($data["email"]);
+    $no_hp  = htmlspecialchars($data["no_hp"]);
+
+    // Ambil foto lama
+    $mhs = tampildata("SELECT * FROM mahasiswa WHERE id = $id")[0];
+
+    if($_FILES["foto"]["error"] == 4){
+        // Tidak upload foto baru
+        $foto = $mhs["foto"];
+    } else {
+        // Upload foto baru
+        $foto = uploadFoto();
+
+        if(!$foto){
+            return false;
+        }
+    }
+
+    $query = "UPDATE mahasiswa SET
+                nama='$nama',
+                nim='$nim',
+                email='$email',
+                no_hp='$no_hp',
+                prodi='$prodi',
+                foto='$foto'
+              WHERE id=$id";
+
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
+
+
 function uploadFoto()
 {
     $namaFile = $_FILES["foto"]["name"];

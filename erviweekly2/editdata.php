@@ -2,13 +2,19 @@
 
 require 'fungsi.php';
 
+$id = $_GET["id"];
+
+$query = "SELECT * FROM mahasiswa WHERE id = $id";
+
+$mhs = tampildata($query)[0]; //wadah isi $id
+
 if(isset($_POST["submit"])){
 
-if(tambahdata($_POST) > 0){
+    if(editdata($_POST) > 0){
 
         echo "
         <script>
-            alert('Data berhasil ditambahkan');
+            alert('Data berhasil di edit');
             document.location.href='mahasiswa.php';
         </script>";
 
@@ -16,7 +22,7 @@ if(tambahdata($_POST) > 0){
 
         echo "
         <script>
-            alert('Data gagal ditambahkan');
+            alert('Data gagal di edit');
         </script>";
 
     }
@@ -30,7 +36,7 @@ if(tambahdata($_POST) > 0){
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Tambah Data Mahasiswa</title>
+    <title>Edit Data Mahasiswa</title>
 
     <style>
         body{
@@ -87,40 +93,39 @@ if(tambahdata($_POST) > 0){
 
 <div class="container">
 
-<h2>Tambah Data Mahasiswa</h2>
+<h2>Edit Data Mahasiswa</h2>
 
 <form action="" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="<?= $mhs["id"]; ?>">
 
     <label>Nama</label>
-       <input type="text" name="nama" id="nama" placeholder="Masukkan Nama" required>
+       <input type="text" name="nama" id="nama" placeholder="Masukkan Nama" required value="<?= $mhs["nama"]; ?>">
 
     <label>NIM</label> 
-    <input type="text" name="nim" id="nim" placeholder="Masukkan NIM" required>
+    <input type="text" name="nim" id="nim" placeholder="Masukkan NIM" required value="<?= $mhs["nim"]; ?>">
 
     <label>Program Studi</label>
     <select name="Prodi" id="Prodi" required>
         <option value="">Pilih Program Studi</option>
-        <option value="Teknik Informatika">Teknik Informatika</option>
-        <option value="Arsitektur">Arsitektur</option>
-        <option value="Teknologi Informasi">Teknologi Informasi</option>
-        <option value="Teknik  Mesin">Teknik  Mesin</option>
-        <option value="Rekayasa Sipil">Rekayasa Sipil</option>
-        <option value="Teknik Elektro">Teknik Elektro</option>
-        
+        <option value="Informatika" <?= ($mhs["prodi"] == "Teknik Informatika") ? "selected" : ""; ?>>Teknik Informatika</option>
+        <option value="Teknologi Informasi" <?= ($mhs["prodi"] == "Teknologi Informasi") ? "selected" : ""; ?>>Teknologi Informasi</option>
+        <option value="Arsitektur" <?= ($mhs["prodi"] == "Arsitektur") ? "selected" : ""; ?>>Arsitektur</option>
+        <option value="Teknik  Mesin" <?= ($mhs["prodi"] == "Teknik  Mesin") ? "selected" : ""; ?>>Teknik  Mesin</option>
+        <option value="Rekayasa Sipil" <?= ($mhs["prodi"] == "Rekayasa Sipil") ? "selected" : ""; ?>>Rekayasa Sipil</option>
+        <option value="Teknik Elektro" <?= ($mhs["prodi"] == "Teknik Elektro") ? "selected" : ""; ?>>Teknik Elektro</option>
     </select>
 
     <label>Email</label>
-    <input type="email" name="email" id="email" placeholder="Masukkan Email" required>
+    <input type="email" name="email" id="email" placeholder="Masukkan Email" required value="<?= $mhs["email"]; ?>">
 
     <label>Nomor HP</label>
-    <input type="text" name="no_hp" id="no_hp" placeholder="Masukkan Nomor HP" required>
-    
+    <input type="text" name="no_hp" id="no_hp" placeholder="Masukkan Nomor HP" required value="<?= $mhs["no_hp"]; ?>">
 
     <label>Foto</label>
     <input type="file" name="foto" id="foto" accept="image/*">
 
     <button type="submit" name="submit">
-        Tambah Data
+        Edit Data
     </button>
 
 </form>
